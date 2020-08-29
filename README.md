@@ -12,11 +12,11 @@
 ## 專案安裝流程
 1. 開啟終端機，並下載本專案至本機電腦
 ```
-git clone https://github.com/Jin0704/AC_RestaurantList.git
+git clone https://github.com/Jin0704/TrashTalk.git
 ```
 2. 運用終端機進入擺放專案的資料夾
 ```
-git clone https://github.com/Jin0704/AC_RestaurantList.git
+git clone https://github.com/Jin0704/TrashTalk.git
 ```
 3. 安裝npm套件
 ```
