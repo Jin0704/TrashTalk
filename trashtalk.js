@@ -3,7 +3,6 @@ function random(array) {
   return array[index]
 }
 
-
 function trashtalk(options) {
   const task = {
     engineer: ['加個按鈕', '加新功能', '切個版', '改一點 code', '寫不出程式'],
@@ -13,22 +12,24 @@ function trashtalk(options) {
 
   const phrase = ['很簡單', '很容易', '很快', '很正常', '也是理所當然的']
   let trashtalk = ''
-  if (!options.target) {
-    trashtalk =
+  switch (options.target) {
+    case 'engineer':
+      trashtalk = '身為一個' + options.target + random(task.engineer) + random(phrase);
+      break;
+    case 'designer':
+      trashtalk = '身為一個' + options.target + random(task.designer) + random(phrase);
+      break;
+    case 'entrepreneur':
+      trashtalk = '身為一個' + options.target + random(task.entrepreneur) + random(phrase);
+      break;
+    default:
+      trashtalk =
+        `
+      <div class="alert alert-danger" role="alert" style="height:90%; display: flex;align-items: center; justify-content: center;">你要選一個人來說幹話阿!<a href='/' class="alert-link">(返回)<a></div>
       `
-    <div class="alert alert-dark" role="alert">你要選一個人來說幹話阿!<a href='/' class="alert-link">(返回)<a></div>
-    `
-  } else if (options.target === 'engineer') {
-    trashtalk = '身為一個' + options.target + random(task.engineer) + random(phrase)
-
-  } else if (options.target === 'designer') {
-    trashtalk = '身為一個' + options.target + random(task.designer) + random(phrase)
-
-  } else if (options.target === 'entrepreneur') {
-    trashtalk = '身為一個' + options.target + random(task.entrepreneur) + random(phrase)
-
   }
   return trashtalk
 }
 
 module.exports = trashtalk
+
